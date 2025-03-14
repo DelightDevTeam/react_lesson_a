@@ -4,3 +4,43 @@ https://www.youtube.com/watch?v=dCLhUialKPQ&t=308s
 https://cloud.appwrite.io/console/organization-67cf9358002eff606729
 
 https://github.com/adrianhajdin/react-movies/tree/main
+
+App.jsx
+import { useState, useEffect } from 'react';
+import './App.css';
+
+const Card = ({ title }) => {
+  const [hasLiked, setHasLiked] = useState(false);
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    console.log(`${title} has been liked: ${hasLiked}`);
+  }),
+    [hasLiked];
+
+  useEffect(() => {
+    console.log('Card Rendered');
+  }, []);
+
+  return (
+    <div className='card' onClick={() => setCount(count + 1)}>
+      <h2>
+        {title}- {count}
+      </h2>
+      <button onClick={() => setHasLiked(!hasLiked)}>
+        {hasLiked ? 'Liked' : 'Like'}
+      </button>
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div className='card-container'>
+      <Card title='Star Wars' />
+      <Card title='Avatars 1' />
+      <Card title='The Lion King 1' />
+    </div>
+  );
+}
+
+export default App;
