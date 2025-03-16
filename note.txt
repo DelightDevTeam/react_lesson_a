@@ -5,6 +5,8 @@ https://cloud.appwrite.io/console/organization-67cf9358002eff606729
 
 https://github.com/adrianhajdin/react-movies/tree/main
 
+npm i react-use
+
 App.jsx
 import { useState, useEffect } from 'react';
 import './App.css';
